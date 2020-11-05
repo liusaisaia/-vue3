@@ -1,6 +1,6 @@
 <!--
  * @LastEditors: liusaisai
- * @LastEditTime: 2020-09-23 10:14:06
+ * @LastEditTime: 2020-09-23 10:28:19
 -->
 <template>
   <h1>{{ msg }}</h1>
@@ -12,10 +12,11 @@
     变更数字: {{num}}<br>
     再次变更: {{num2.value}}<br>
   </p>
+  <img src="../assets/图片.png" alt="">
 </template>
 
 <script>
-import { ref, reactive, readonly, computed, watch } from "vue";
+import { onMounted, onUpdated, onUnmounted, ref, reactive, readonly, computed, watch } from "vue";
 export default {
   name: "HelloWorld",
   props: {
@@ -27,6 +28,20 @@ export default {
       name: "lss",
       age: 18,
     });
+    // 生命周期钩子
+    onMounted(() => {
+      console.log('mounted');
+    })
+    onUpdated(() => {
+      console.log('updated');
+    })
+    onUnmounted(() => {
+      console.log('unmounted');
+    });
+
+
+
+
     // readonly参数可以是一个响应式或者普通对象或者是ref，返回是只读代理，不可以改变
     const obj2 = readonly(obj);
     obj2.name = '李四';
