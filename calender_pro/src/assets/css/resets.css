@@ -1,108 +1,123 @@
-html,
-body,
-div,
-span,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin       : 0;
-  padding      : 0;
-  /*border     :0;
-	*/
-  /*outline    :0;
-	*/
-  /*font-size  :100%;
-	vertical-align:baseline;
-	background    :transparent;
-	*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    box-sizing:border-box;
+}
+body {
+    line-height:1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-em,
-i {
-  font-weight: 100;
-  font-style : normal;
+:focus {
+    outline: 1;
 }
 
-ul,
-ol,
-li {
-  list-style-type: none;
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary {
+    display:block;
+}
+
+ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
 }
 
 a {
-  color          : #666;
-  text-decoration: none;
-  outline        : 0;
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
-a:hover {
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+mark {
+    background-color: transparent;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted #000;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height: .02rem;
+    border: medium none;
+    border-top:0.02rem solid #cccccc;
+    margin: .1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+a,ins,s,u,del {
   text-decoration: none;
+}
+
+sup, sub {
+  vertical-align: baseline;
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+  font-size: 50px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: Avenir, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
+  color: #333;
+  font-size: .28rem;
+  line-height: 1;
+  -webkit-text-size-adjust: none;
+}
+
+.container {
+  padding: 0.82rem 0 0.44rem 0;
+  box-sizing: border-box;
 }

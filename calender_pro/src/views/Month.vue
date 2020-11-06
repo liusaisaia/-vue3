@@ -10,7 +10,9 @@ import { onMounted } from 'vue';
 export default {
   name: 'MonthPage',
   setup () {
-
+    onMounted(() => {
+      getData('month', '2012-1')
+    })
   }
 }
 </script>
