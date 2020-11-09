@@ -1,19 +1,34 @@
 <template>
   <div class="container">
-    Day pages
+    <day-card :date="dayData" />
+    <day-list :data="dayData"/>
   </div>
 </template>
 
 <script>
 import getData from '@/services';
-import { onMounted } from 'vue';
+import DayCard from '@/components/Daypage/Card';
+import DayList from '@/components/Daypage/list';
+import { useStore } from 'vuex';
+import { onMounted, computed } from 'vue';
+import { getNowDate } from '@/libs/utils';
 export default {
   name: 'DayPage',
+  components: {
+    DayCard,
+    DayList
+  },
   setup () {
+    const store = useStore(),
+          state = store.state;
 
     onMounted(() => {
-      getData('day', '2020-7-1');
+      getData(store, 'day', getNowDate('day'));
     });
+    console.log(state.dayData);
+    return {
+      dayData: computed(() => state.dayData)
+    }
   }
 }
 </script>

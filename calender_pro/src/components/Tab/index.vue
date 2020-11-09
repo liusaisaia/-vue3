@@ -1,7 +1,7 @@
 <template>
   <div class="tab">
     <div class="tab-item" v-for="(item, index) in tabData" :key="index">
-      <tab-icon :iconText="item.iconText" :path="item.path"></tab-icon>
+      <tab-icon :iconText="item.iconText" :path="item.path">{{item.tabText}}</tab-icon>
     </div>
   </div>
 </template>
@@ -20,6 +20,9 @@ export default {
     const state = reactive({
       tabData,
     });
+    return {
+      ...state
+    }
   },
 };
 </script>

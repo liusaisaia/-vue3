@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <my-header>{{ headerTitle }}</my-header>
+    <search-input
+      :placeholder="placeholder"
+      :maxlength="maxlength"
+    />
     <router-view />
     <tab />
   </div>
@@ -8,22 +12,32 @@
 
 <script>
 import myHeader from "@/components/header";
-import Tab from '@/components/tab';
+import SearchInput from "@/components/serchWarp"
+import Tab from '@/components/Tab';
 
-import { computed } from "vue";
+import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 export default {
   name: "App",
   components: {
     myHeader,
-    Tab
+    Tab,
+    SearchInput
   },
   setup() {
     const store = useStore(),
       state = store.state,
       router = useRouter();
     router.push("/");
+    store.commit('setplaceholder', 'day')
+    watch(() => {
+      return router.currentRoute.value.name;
+    }, (value) => {
+      store.commit('setHeaderTitle', value)
+      store.commit('setplaceholder', value)
+      store.commit('setMaxLength', value)
+    })
     return computed(() => state).value; // {}
   },
 };
