@@ -25,7 +25,6 @@ export default {
     onMounted(() => {
       getData(store, 'day', getNowDate('day'));
     });
-    console.log(state.dayData);
     return {
       dayData: computed(() => state.dayData)
     }

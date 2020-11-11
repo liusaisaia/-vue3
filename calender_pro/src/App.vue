@@ -4,6 +4,7 @@
     <search-input
       :placeholder="placeholder"
       :maxlength="maxlength"
+      :dateTime="field"
     />
     <router-view />
     <tab />
@@ -34,9 +35,9 @@ export default {
     watch(() => {
       return router.currentRoute.value.name;
     }, (value) => {
-      store.commit('setHeaderTitle', value)
-      store.commit('setplaceholder', value)
-      store.commit('setMaxLength', value)
+      store.commit('setHeaderTitle', value);
+      store.commit('setplaceholder', value);
+      store.commit('setMaxLength', value);
     })
     return computed(() => state).value; // {}
   },

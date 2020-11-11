@@ -1,18 +1,30 @@
 <template>
   <div class="container">
-    Month pages
+    <month-card />
   </div>
 </template>
 
 <script>
 import getData from '@/services';
-import { onMounted } from 'vue';
+import { useStore } from 'vuex';
+import { onMounted, computed } from 'vue';
+import { getNowDate } from '@/libs/utils';
+import MonthCard from '@/components/MonthCard'
 export default {
   name: 'MonthPage',
+  components: {
+    MonthCard
+  },
   setup () {
+    const store = useStore(),
+          state = store.state;
+
     onMounted(() => {
-      getData('month', '2012-1')
-    })
+      getData(store, 'month', getNowDate('month'));
+    });
+    // return {
+    //   monthData: computed(() => state.monthData)
+    // }
   }
 }
 </script>

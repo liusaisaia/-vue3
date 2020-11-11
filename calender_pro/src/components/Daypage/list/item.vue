@@ -41,6 +41,10 @@ export default {
         display: flex;
         align-items: center;
         font-size: .14rem;
+        flex: 1;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
       }
     }
   }

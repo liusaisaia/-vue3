@@ -6,7 +6,6 @@ function getDayData(date) {
       url: '/api/calendar/day',
       data: { date },
       success(data) {
-        console.log(data);
         resolve(data);
       },
       error(err) {

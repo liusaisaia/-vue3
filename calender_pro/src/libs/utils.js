@@ -56,9 +56,25 @@ function getNowDate (routerName) {
       }
 }
 
+function dayConversion (date ,time) {
+  let month = time.substr(4,2);
+  let day = time.substr(6, 2);
+  switch (date) {
+    case 'day':
+      return time.substr(0, 4) + '-' + (Number(month) > 10 ? month : Number(month)) + '-' + (Number(day) > 10 ? day : Number(day));
+    case 'month':
+      return time.substr(0, 4) + '-' + (Number(month) > 10 ? month : Number(month));
+    case 'year':
+      return time.substr(0, 4);
+    default:
+      return time.substr(0, 4) + '-' + (Number(month) > 10 ? month : Number(month)) + '-' + (Number(day) > 10 ? day : Number(day));
+  }
+}
+
 export {
   getIconDate,
   formatChsDate,
   mapForChsDate,
-  getNowDate
+  getNowDate,
+  dayConversion
 }
