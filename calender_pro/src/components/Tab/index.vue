@@ -16,12 +16,12 @@ export default {
   components: {
     TabIcon,
   },
-  setup() {
+  setup(ctx) {
     const state = reactive({
       tabData,
     });
     return {
-      ...state
+      ...state,
     }
   },
 };

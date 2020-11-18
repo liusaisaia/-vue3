@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <month-card />
+    <month-card :date="monthData" />
   </div>
 </template>
 
@@ -22,13 +22,17 @@ export default {
     onMounted(() => {
       getData(store, 'month', getNowDate('month'));
     });
-    // return {
-    //   monthData: computed(() => state.monthData)
-    // }
+    return {
+      monthData: computed(() => state.monthData)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.container {
+  height: 100vh;
+  overflow: auto;
+  padding-bottom: 1rem;
+}
 </style>

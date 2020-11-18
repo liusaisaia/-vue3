@@ -32,9 +32,18 @@ export default {
     }
     const searchBtn = () => {
       let time = '';
+      console.log(ctx);
       if (ctx.dateTime === 'day') {
         time = inputValue.value;
         if (time.length < 8) return;
+        getData(store, ctx.dateTime, dayConversion( ctx.dateTime, time));
+      } else if (ctx.dateTime === 'month') {
+        time = inputValue.value;
+        if (time.length < 6) return;
+        getData(store, ctx.dateTime, dayConversion( ctx.dateTime, time));
+      } else if (ctx.dateTime === 'year') {
+        time = inputValue.value;
+        if (time.length < 4) return;
         getData(store, ctx.dateTime, dayConversion( ctx.dateTime, time));
       }
     }

@@ -1,5 +1,6 @@
 export default {
   setHeaderTitle (state, routerName) {
+    state.field = routerName;
     switch (routerName) {
       case 'day':
         state.headerTitle = '当天信息';
